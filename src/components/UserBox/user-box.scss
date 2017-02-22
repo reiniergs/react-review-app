@@ -1,0 +1,26 @@
+@import "_mixin-media-queries";
+
+$user-box-color: #3097ef;
+
+.user-box {
+	@include responsive(small-screens) {
+		width: 80%;
+		padding: 1em;
+	}
+	margin-top: 3em;
+	width: 52%;
+	overflow: auto;
+	background-color: $user-box-color;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 20px;
+	padding: 1.5em 2.2em 2em 2.8em;
+}
+.text-box {
+	@include responsive(small-screens) {
+		width: 100%;
+		text-align: center;
+	}
+	width: 75%;
+	float: right;
+}

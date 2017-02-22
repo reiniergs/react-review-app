@@ -1,0 +1,24 @@
+@import "_mixin-media-queries";
+
+$background-color: #1187ed;
+
+body {
+	background-color: $background-color;
+	font-family: 'Salesforce sans';
+	color: #fff;
+}
+.reviews {
+	@include responsive(small-screens) {
+		margin-top: 1em;
+	}
+	margin-top: 6em;
+	text-align: center;
+	h1 {
+		font-family: 'Salesforce sans light';
+		letter-spacing: 0.05em;
+	}
+	p {
+		font-size: 0.8em;
+		letter-spacing: 0.02em;
+	}
+}
