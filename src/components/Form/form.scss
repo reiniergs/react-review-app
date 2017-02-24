@@ -1,0 +1,60 @@
+@import "../_mixins/_mixin-media-queries";
+
+form {
+	@include responsive(small-screens) {
+		width: 80%;
+		padding: 1em;
+	}
+    background: #fff;
+    color: #000;
+    width: 55%;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    padding: 0.01em 1em;
+    h3 {
+    	margin-top: 0.7em;
+    }
+    .left-input, .right-input, textarea {
+    	@include responsive(medium-screens) {
+    		width: 90%;
+    	}
+    	@include responsive(small-screens) {
+    		width: 87%;
+    	}
+    	width: 43%;
+    	margin-bottom: 1em;
+    	font-size: 1.1em;
+    	padding: 0.6em 1em;
+    	border: 1px solid #ccc; 
+    }
+    .left-input {
+    	float: left;
+    }
+    .right-input {
+    	@include responsive(medium-screens) {
+    		float: none;
+    	}
+    	float: right;
+    }
+    textarea {
+    	@include responsive(medium-screens) {
+    		width: 90%;
+    	}
+    	@include responsive(small-screens) {
+    		width: 87%;
+    	}
+    	width: 95%;
+    	display: block;
+    	font-size: 1.4em;
+    }
+    .submit-button {
+    	background-color: #FFF;
+    	border: 1px solid #f9f9f9;
+    	padding: 1em 2em;
+    	box-shadow: 1px 1px 1px 1px #d6d6d6;
+    	margin-bottom: 1.5em;
+    }
+}
