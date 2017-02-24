@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import UserBox from "../UserBox";
+import UserBox from '../UserBox';
+import Form from '../Form';
 import './app-reviews.scss';
 var axios = require('axios');
 
@@ -13,7 +14,7 @@ export default class AppReviews extends Component {
  }
 
  componentDidMount() {
-  axios.get('/reviews')
+  axios.get('/review')
     .then(response => this.setState({
       reviews: response.data
     }))
@@ -27,6 +28,7 @@ export default class AppReviews extends Component {
           <p>See what our users have been saying.</p>
         </div>
         { this.renderReviews() }
+        <Form />
       </div>
     );
   }
