@@ -1,33 +1,37 @@
 import React, { Component, PropTypes } from 'react';
 import './form.scss';
-var axios = require('axios');
+import axios from 'axios';
+
+const initialState = { title: '', email: '', comment: '' };
 
 export default class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    	title: '',
-    	email: '',
-    	comment: ''
-    };
-
+    this.state = initialState;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-  	const { name, value} = event.target 
+  	const { name, value} = event.target
     this.setState({
     	[name]: value
     });
   }
 
   handleSubmit(event) {
-  	axios.post('/review', {
-  		title: this.state.title,
-  		comment: this.state.comment,
-  		email: this.state.email
-  	})
+    const { title, comment, email } = this.state;
+    const { onNewReview } = this.props;
+    // stop browser default refresh when you submit a form
+    event.preventDefault();
+
+  	axios.post('/review', { title, comment, email })
+         .then(response => {
+            if (typeof onNewReview === 'function') {
+              onNewReview(response.data);
+              this.setState(initialState);  
+            }
+         })
   }
 
   render() {

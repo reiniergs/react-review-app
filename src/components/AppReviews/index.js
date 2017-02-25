@@ -10,7 +10,7 @@ export default class AppReviews extends Component {
   this.state = {
     reviews: []
   }
-
+  this.addReview = this.addReview.bind(this);
  }
 
  componentDidMount() {
@@ -28,7 +28,8 @@ export default class AppReviews extends Component {
           <p>See what our users have been saying.</p>
         </div>
         { this.renderReviews() }
-        <Form />
+        {/* notice the funciton addReview is pass as a reference */}
+        <Form onNewReview={ this.addReview }/>
       </div>
     );
   }
@@ -38,5 +39,11 @@ export default class AppReviews extends Component {
     return reviews.map(rev => {
       return <UserBox name={ rev.title } comment={ rev.comment } photo={ rev.avatar } />
     })
+  }
+
+  addReview(review) {
+    const {reviews} = this.state;
+    reviews.push(review);
+    this.setState({ reviews: reviews });
   }
 }
