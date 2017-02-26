@@ -5,6 +5,7 @@ import './app-reviews.scss';
 import axios from 'axios';
 
 export default class AppReviews extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -20,6 +21,7 @@ export default class AppReviews extends Component {
                 reviews: response.data
             }))
     }
+
 
     addReview(review) {
         const { reviews } = this.state;

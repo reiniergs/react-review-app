@@ -5,6 +5,7 @@ import axios from 'axios';
 const initialState = { title: '', email: '', comment: '' };
 
 export default class Form extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = initialState;
