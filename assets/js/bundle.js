@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "63a94743e5c3a3dd2c38"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a41dc6418f9092f3cb06"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -12318,7 +12318,9 @@ var UserComment = function (_Component) {
 			return _react2.default.createElement(
 				'p',
 				{ className: 'comment' },
-				this.props.comment
+				' ',
+				this.props.comment,
+				' '
 			);
 		}
 	}]);
@@ -12368,7 +12370,9 @@ var UserName = function (_Component) {
 			return _react2.default.createElement(
 				'h2',
 				null,
-				this.props.name
+				' ',
+				this.props.name,
+				' '
 			);
 		}
 	}]);

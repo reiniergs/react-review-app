@@ -38,10 +38,10 @@ export default class Form extends React.Component {
         return (
             <form onSubmit={ this.handleSubmit }>
               	<h3>POST REVIEW</h3>
-              	<input type='text' className='left-input' name='title' placeholder='Your Name' value={ title } onChange={ this.handleChange } />
-              	<input type='email' className='right-input' name='email' placeholder='Your Email' value={ email } onChange={ this.handleChange } />
-                <textarea name='comment' placeholder='Your Message' value={ comment } onChange={ this.handleChange } ></textarea>
-                <input type='submit' className='submit-button' value='SEND' />
+              	<input type="text" className="left-input" name="title" placeholder="Your Name" value={ title } onChange={ this.handleChange } />
+              	<input type="email" className="right-input" name="email" placeholder="Your Email" value={ email } onChange={ this.handleChange } />
+                <textarea name="comment" placeholder="Your Message" value={ comment } onChange={ this.handleChange } ></textarea>
+                <input type="submit" className="submit-button" value="SEND" />
             </form>
         );
     }

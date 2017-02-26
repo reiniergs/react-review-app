@@ -5,7 +5,7 @@ export default class UserPhoto extends Component {
 	
 	render() {
 		return (
-			<img src={this.props.photo} role='presentation' className='photo' />
+			<img src={ this.props.photo } role="presentation" className="photo" />
 		);
 	}
 }

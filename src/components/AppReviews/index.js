@@ -30,7 +30,7 @@ export default class AppReviews extends Component {
     render() {
         return (
             <div>
-                <div className='reviews'>
+                <div className="reviews">
                     <h1>Reviews</h1>
                     <p>See what our users have been saying.</p>
                 </div>
