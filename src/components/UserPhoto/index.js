@@ -11,5 +11,5 @@ export default class UserPhoto extends Component {
 }
 
 UserPhoto.defaultProps = {
-  photo: 'img/user.png'
+  	photo: 'img/user.png'
 }
