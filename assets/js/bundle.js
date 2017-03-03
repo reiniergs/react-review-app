@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a3e0893ce9f934d64955"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9796e977a4a8eb174c44"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -5945,7 +5945,7 @@ exports = module.exports = __webpack_require__(22)();
 
 
 // module
-exports.push([module.i, "body {\n  background-color: #1187ed;\n  font-family: 'Salesforce sans';\n  color: #fff; }\n\n.reviews {\n  margin-top: 6em;\n  text-align: center; }\n  @media only screen and (max-width: 760px) {\n    .reviews {\n      margin-top: 1em; } }\n  .reviews h1 {\n    font-family: 'Salesforce sans light';\n    letter-spacing: 0.05em; }\n  .reviews p {\n    font-size: 0.8em;\n    letter-spacing: 0.02em; }\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -5959,7 +5959,7 @@ exports = module.exports = __webpack_require__(22)();
 
 
 // module
-exports.push([module.i, "form {\n  background: #fff;\n  color: #000;\n  width: 55%;\n  overflow: auto;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 3em;\n  margin-bottom: 3em;\n  padding: 0.01em 1em; }\n  @media only screen and (max-width: 760px) {\n    form {\n      width: 80%;\n      padding: 1em; } }\n  form h3 {\n    margin-top: 0.7em; }\n  form .left-input, form .right-input, form textarea {\n    width: 43%;\n    margin-bottom: 1em;\n    font-size: 1.1em;\n    padding: 0.6em 1em;\n    border: 1px solid #ccc; }\n    @media only screen and (max-width: 992px) {\n      form .left-input, form .right-input, form textarea {\n        width: 90%; } }\n    @media only screen and (max-width: 760px) {\n      form .left-input, form .right-input, form textarea {\n        width: 87%; } }\n  form .left-input {\n    float: left; }\n  form .right-input {\n    float: right; }\n    @media only screen and (max-width: 992px) {\n      form .right-input {\n        float: none; } }\n  form textarea {\n    width: 95%;\n    display: block;\n    font-size: 1.4em; }\n    @media only screen and (max-width: 992px) {\n      form textarea {\n        width: 90%; } }\n    @media only screen and (max-width: 760px) {\n      form textarea {\n        width: 87%; } }\n  form .submit-button {\n    background-color: #FFF;\n    border: 1px solid #f9f9f9;\n    padding: 1em 2em;\n    box-shadow: 1px 1px 1px 1px #d6d6d6;\n    margin-bottom: 1.5em; }\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -5973,7 +5973,7 @@ exports = module.exports = __webpack_require__(22)();
 
 
 // module
-exports.push([module.i, ".user-box {\n  margin-top: 3em;\n  width: 52%;\n  overflow: auto;\n  background-color: #3097ef;\n  margin-left: auto;\n  margin-right: auto;\n  border-radius: 20px;\n  padding: 1.5em 2.2em 2em 2.8em; }\n  @media only screen and (max-width: 760px) {\n    .user-box {\n      width: 80%;\n      padding: 1em; } }\n\n.text-box {\n  width: 75%;\n  float: right; }\n  @media only screen and (max-width: 760px) {\n    .text-box {\n      width: 100%;\n      text-align: center; } }\n", ""]);
+exports.push([module.i, "article.slds-post {\n  background: #f4f6f9; }\n", ""]);
 
 // exports
 
@@ -5987,7 +5987,7 @@ exports = module.exports = __webpack_require__(22)();
 
 
 // module
-exports.push([module.i, ".comment {\n  font-family: 'Salesforce sans light';\n  font-size: 0.9em;\n  line-height: 1.5em;\n  margin-top: 0; }\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -6001,7 +6001,7 @@ exports = module.exports = __webpack_require__(22)();
 
 
 // module
-exports.push([module.i, ".photo {\n  width: 17%;\n  float: left;\n  border: 9px solid #83c1f5;\n  border-radius: 1000px;\n  background-color: #c0c0c0;\n  position: relative;\n  top: 1em; }\n  @media only screen and (max-width: 760px) {\n    .photo {\n      width: 40%;\n      float: none;\n      margin-right: auto;\n      margin-left: auto;\n      display: block;\n      margin-bottom: 1em; } }\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -11214,20 +11214,11 @@ var AppReviews = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
+                { className: 'slds-container--large slds-container--center slds-m-vertical--xx-large' },
                 _react2.default.createElement(
-                    'div',
-                    { className: 'reviews' },
-                    _react2.default.createElement(
-                        'h1',
-                        null,
-                        'Reviews'
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        'See what our users have been saying.'
-                    )
+                    'h1',
+                    { className: 'slds-text-heading--large slds-m-bottom--x-large' },
+                    'Your Opinion'
                 ),
                 this.renderReviews(),
                 _react2.default.createElement(_Form2.default, { onNewReview: this.addReview })
@@ -11237,10 +11228,20 @@ var AppReviews = function (_Component) {
         key: 'renderReviews',
         value: function renderReviews() {
             var reviews = this.state.reviews;
+            //The toString() use is to return a true or false value, because an array is always true
 
-            return reviews.map(function (rev) {
-                return _react2.default.createElement(_UserBox2.default, { name: rev.title, comment: rev.comment, photo: rev.avatar });
-            });
+            if (reviews.toString()) {
+                return reviews.map(function (rev) {
+                    return _react2.default.createElement(_UserBox2.default, { name: rev.title, comment: rev.comment, photo: rev.avatar, date: rev.createdAt });
+                });
+            } else {
+                //It's not finished. Only to show something when there is not reviews to show
+                return _react2.default.createElement(
+                    'h1',
+                    { className: 'no-reviews' },
+                    'No reviews to show'
+                );
+            }
         }
     }]);
 
@@ -12184,14 +12185,65 @@ var Form = function (_React$Component) {
                 'form',
                 { onSubmit: this.handleSubmit },
                 _react2.default.createElement(
-                    'h3',
-                    null,
-                    'POST REVIEW'
+                    'h1',
+                    { className: 'slds-text-heading--large slds-m-bottom--small' },
+                    'POST'
                 ),
-                _react2.default.createElement('input', { type: 'text', className: 'left-input', name: 'title', placeholder: 'Your Name', value: title, onChange: this.handleChange }),
-                _react2.default.createElement('input', { type: 'email', className: 'right-input', name: 'email', placeholder: 'Your Email', value: email, onChange: this.handleChange }),
-                _react2.default.createElement('textarea', { name: 'comment', placeholder: 'Your Message', value: comment, onChange: this.handleChange }),
-                _react2.default.createElement('input', { type: 'submit', className: 'submit-button', value: 'SEND' })
+                _react2.default.createElement(
+                    'fieldset',
+                    { className: 'slds-form--compound' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'slds-form-element__group' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'slds-form-element__row' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'slds-form-element slds-size--1-of-2' },
+                                _react2.default.createElement(
+                                    'label',
+                                    { className: 'slds-form-element__label', htmlFor: 'text-input-01' },
+                                    'Your Name'
+                                ),
+                                _react2.default.createElement('input', { type: 'text', name: 'title', id: 'text-input-01', className: 'slds-input', value: title, onChange: this.handleChange })
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'slds-form-element slds-size--1-of-2' },
+                                _react2.default.createElement(
+                                    'label',
+                                    { className: 'slds-form-element__label', htmlFor: 'text-input-02' },
+                                    'Your Email'
+                                ),
+                                _react2.default.createElement('input', { type: 'email', name: 'email', id: 'text-input-0', className: 'slds-input', value: email, onChange: this.handleChange })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'slds-form-element' },
+                            _react2.default.createElement(
+                                'label',
+                                { className: 'slds-form-element__label', htmlFor: 'textarea-input-01' },
+                                'Your Message'
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'slds-form-element__control' },
+                                _react2.default.createElement('textarea', { name: 'comment', id: 'textarea-input-01', className: 'slds-textarea', value: comment, onChange: this.handleChange })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'submit-button slds-m-top--large' },
+                            _react2.default.createElement(
+                                'button',
+                                { type: 'submit', className: 'slds-button slds-button--brand slds-align--absolute-center' },
+                                'Send'
+                            )
+                        )
+                    )
+                )
             );
         }
     }]);
@@ -12232,6 +12284,10 @@ var _UserComment = __webpack_require__(116);
 
 var _UserComment2 = _interopRequireDefault(_UserComment);
 
+var _PostDate = __webpack_require__(223);
+
+var _PostDate2 = _interopRequireDefault(_PostDate);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12255,18 +12311,57 @@ var UserBox = function (_Component) {
             var _props = this.props,
                 name = _props.name,
                 comment = _props.comment,
-                photo = _props.photo;
+                photo = _props.photo,
+                date = _props.date;
 
             return _react2.default.createElement(
-                'div',
-                { className: 'user-box' },
-                _react2.default.createElement(_UserPhoto2.default, { photo: photo }),
+                'article',
+                { className: 'slds-card slds-m-bottom--x-large' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'text-box' },
-                    _react2.default.createElement(_UserName2.default, { name: name }),
-                    _react2.default.createElement(_UserComment2.default, { comment: comment })
-                )
+                    { className: 'slds-card__header slds-grid' },
+                    _react2.default.createElement(
+                        'header',
+                        { className: 'slds-media slds-media--center slds-has-flexi-truncate' },
+                        _react2.default.createElement('div', { className: 'slds-media__figure' }),
+                        _react2.default.createElement('div', { className: 'slds-media__body' })
+                    ),
+                    _react2.default.createElement('div', { className: 'slds-no-flex' })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'slds-card__body' },
+                    _react2.default.createElement(
+                        'article',
+                        { className: 'slds-post' },
+                        _react2.default.createElement(
+                            'header',
+                            { className: 'slds-post__header slds-media' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'slds-media__figure' },
+                                _react2.default.createElement(_UserPhoto2.default, { photo: photo, name: name })
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'slds-media__body' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'slds-grid slds-grid--align-spread slds-has-flexi-truncate' },
+                                    _react2.default.createElement(_UserName2.default, { name: name })
+                                ),
+                                _react2.default.createElement(_PostDate2.default, { date: date })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'slds-post__content slds-text-longform' },
+                            _react2.default.createElement(_UserComment2.default, { comment: comment })
+                        ),
+                        _react2.default.createElement('footer', { className: 'slds-post__footer' })
+                    )
+                ),
+                _react2.default.createElement('div', { className: 'slds-card__footer' })
             );
         }
     }]);
@@ -12317,7 +12412,7 @@ var UserComment = function (_Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				'p',
-				{ className: 'comment' },
+				null,
 				' ',
 				this.props.comment,
 				' '
@@ -12347,6 +12442,8 @@ var _react = __webpack_require__(15);
 
 var _react2 = _interopRequireDefault(_react);
 
+__webpack_require__(222);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12368,11 +12465,15 @@ var UserName = function (_Component) {
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
-				'h2',
-				null,
-				' ',
-				this.props.name,
-				' '
+				'p',
+				{ className: 'user-name' },
+				_react2.default.createElement(
+					'a',
+					{ href: 'javascript:void(0);', title: this.props.name },
+					' ',
+					this.props.name,
+					' '
+				)
 			);
 		}
 	}]);
@@ -12421,7 +12522,11 @@ var UserPhoto = function (_Component) {
 	_createClass(UserPhoto, [{
 		key: 'render',
 		value: function render() {
-			return _react2.default.createElement('img', { src: this.props.photo, role: 'presentation', className: 'photo' });
+			return _react2.default.createElement(
+				'a',
+				{ href: 'javascript:void(0);', title: this.props.name, className: 'slds-avatar slds-avatar--circle slds-avatar--large' },
+				_react2.default.createElement('img', { src: this.props.photo, role: 'presentation' })
+			);
 		}
 	}]);
 
@@ -12432,7 +12537,7 @@ exports.default = UserPhoto;
 
 
 UserPhoto.defaultProps = {
-	photo: 'img/user.png'
+	photo: 'images/avatar1.jpg'
 };
 
 /***/ }),
@@ -24817,6 +24922,144 @@ var _AppReviews2 = _interopRequireDefault(_AppReviews);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(_AppReviews2.default, null), document.getElementById('app'));
+
+/***/ }),
+/* 221 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(22)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 222 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(221);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(28)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(true) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept(221, function() {
+			var newContent = __webpack_require__(221);
+			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 223 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(15);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(225);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PostDate = function (_Component) {
+	_inherits(PostDate, _Component);
+
+	function PostDate() {
+		_classCallCheck(this, PostDate);
+
+		return _possibleConstructorReturn(this, (PostDate.__proto__ || Object.getPrototypeOf(PostDate)).apply(this, arguments));
+	}
+
+	_createClass(PostDate, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'p',
+				{ className: 'slds-text-body--small' },
+				_react2.default.createElement(
+					'a',
+					{ href: 'javascript:void(0);', className: 'slds-text-link--reset' },
+					' ',
+					this.props.date,
+					' '
+				)
+			);
+		}
+	}]);
+
+	return PostDate;
+}(_react.Component);
+
+exports.default = PostDate;
+
+/***/ }),
+/* 224 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(22)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 225 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(224);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(28)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(true) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept(224, function() {
+			var newContent = __webpack_require__(224);
+			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

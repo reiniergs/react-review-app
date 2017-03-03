@@ -31,11 +31,8 @@ export default class AppReviews extends Component {
 
     render() {
         return (
-            <div>
-                <div className="reviews">
-                    <h1>Reviews</h1>
-                    <p>See what our users have been saying.</p>
-                </div>
+            <div className="slds-container--large slds-container--center slds-m-vertical--xx-large">
+                <h1 className="slds-text-heading--large slds-m-bottom--x-large">Your Opinion</h1>
                 { this.renderReviews() }
                 <Form onNewReview={ this.addReview } />
             </div>
@@ -44,8 +41,14 @@ export default class AppReviews extends Component {
 
     renderReviews() {
         const { reviews } = this.state;
-        return reviews.map(rev => {
-            return <UserBox name={ rev.title } comment={ rev.comment } photo={ rev.avatar } />
-        })
+        //The toString() use is to return a true or false value, because an array is always true
+        if (reviews.toString()) {
+            return reviews.map(rev => {
+                return <UserBox name={ rev.title } comment={ rev.comment } photo={ rev.avatar } date={ rev.createdAt } />
+            })
+        } else {
+            //It's not finished. Only to show something when there is not reviews to show
+            return <h1 className="no-reviews">No reviews to show</h1>
+        }
     }
 }

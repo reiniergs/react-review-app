@@ -38,11 +38,30 @@ export default class Form extends React.Component {
         const { title, email, comment } = this.state;
         return (
             <form onSubmit={ this.handleSubmit }>
-              	<h3>POST REVIEW</h3>
-              	<input type="text" className="left-input" name="title" placeholder="Your Name" value={ title } onChange={ this.handleChange } />
-              	<input type="email" className="right-input" name="email" placeholder="Your Email" value={ email } onChange={ this.handleChange } />
-                <textarea name="comment" placeholder="Your Message" value={ comment } onChange={ this.handleChange } ></textarea>
-                <input type="submit" className="submit-button" value="SEND" />
+              	<h1 className="slds-text-heading--large slds-m-bottom--small">POST</h1>
+                <fieldset className="slds-form--compound">
+                    <div className="slds-form-element__group">
+                        <div className="slds-form-element__row">
+                            <div className="slds-form-element slds-size--1-of-2">
+                                <label className="slds-form-element__label" htmlFor="text-input-01">Your Name</label>
+                                <input type="text" name="title" id="text-input-01" className="slds-input" value={ title } onChange={ this.handleChange } />
+                            </div>
+                          	<div className="slds-form-element slds-size--1-of-2">
+                                <label className="slds-form-element__label" htmlFor="text-input-02">Your Email</label>
+                                <input type="email" name="email" id="text-input-0" className="slds-input" value={ email } onChange={ this.handleChange } />
+                            </div>
+                        </div>
+                      	<div className="slds-form-element">
+                            <label className="slds-form-element__label" htmlFor="textarea-input-01">Your Message</label>
+                            <div className="slds-form-element__control">
+                                <textarea name="comment" id="textarea-input-01" className="slds-textarea" value={ comment } onChange={ this.handleChange } ></textarea>
+                            </div>
+                        </div>
+                        <div className="submit-button slds-m-top--large">
+                            <button type="submit" className="slds-button slds-button--brand slds-align--absolute-center">Send</button>
+                        </div>
+                    </div>
+                </fieldset>
             </form>
         );
     }
