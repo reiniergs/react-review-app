@@ -1,0 +1,20 @@
+svg.slds-button__icon, button.slds-button {
+	fill: rgba(#000, 0.16);
+	&:hover, &:focus {
+		color: #ff9a3c;
+	}
+}
+button.slds-button + button.slds-button {
+	margin-left: -8px;
+	&:focus {
+		box-shadow: none;
+	}
+}
+button.slds-button {
+	&:focus {
+		box-shadow: none;
+	}
+}
+.stars-box {
+	margin-left: -6px;
+}

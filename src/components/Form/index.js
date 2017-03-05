@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import './form.scss';
+import Valuation from '../Valuation';
 import axios from 'axios';
 
 const initialState = { title: '', email: '', comment: '' };
@@ -57,9 +58,14 @@ export default class Form extends React.Component {
                                 <textarea name="comment" id="textarea-input-01" className="slds-textarea" value={ comment } onChange={ this.handleChange } ></textarea>
                             </div>
                         </div>
-                        <div className="submit-button slds-m-top--large">
-                            <button type="submit" className="slds-button slds-button--brand slds-align--absolute-center">Send</button>
+                        <div className="slds-m-top--medium">
+                            <label className="slds-form-element__label">Your Valuation</label><br/>
+                            <Valuation />
                         </div>
+                        <div className="submit-button slds-m-top--large">
+                            <button type="submit" className="slds-button slds-button--brand">Send</button>
+                        </div>
+                        <div className="g-recaptcha" data-sitekey=""></div>
                     </div>
                 </fieldset>
             </form>
