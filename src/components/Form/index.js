@@ -62,10 +62,10 @@ export default class Form extends React.Component {
                             <label className="slds-form-element__label">Your Valuation</label><br/>
                             <Valuation />
                         </div>
+                        <div className="g-recaptcha slds-float--right" data-sitekey="6LehsxcUAAAAAFGJqyqEmbPvUBtmy755NOuXJalz"></div>
                         <div className="submit-button slds-m-top--large">
                             <button type="submit" className="slds-button slds-button--brand">Send</button>
                         </div>
-                        <div className="g-recaptcha" data-sitekey=""></div>
                     </div>
                 </fieldset>
             </form>

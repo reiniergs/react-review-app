@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "7c4fe6b773bbbcd64958"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4d02d131ab9458ed6898"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -5959,7 +5959,7 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".g-recaptcha {\n  margin-top: -2rem; }\n", ""]);
 
 // exports
 
@@ -6043,7 +6043,7 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, "svg.slds-button__icon, button.slds-button {\n  fill: rgba(0, 0, 0, 0.16); }\n  svg.slds-button__icon:hover, svg.slds-button__icon:focus, button.slds-button:hover, button.slds-button:focus {\n    color: #ff9a3c; }\n\nbutton.slds-button + button.slds-button {\n  margin-left: -8px; }\n  button.slds-button + button.slds-button:focus {\n    box-shadow: none; }\n\nbutton.slds-button:focus {\n  box-shadow: none; }\n\n.stars-box {\n  margin-left: -6px; }\n", ""]);
+exports.push([module.i, "svg.slds-button__icon, button.star-button {\n  fill: rgba(0, 0, 0, 0.16); }\n  svg.slds-button__icon:hover, svg.slds-button__icon:focus, button.star-button:hover, button.star-button:focus {\n    color: #ff9a3c; }\n\nbutton.slds-button + button.slds-button {\n  margin-left: -8px; }\n  button.slds-button + button.slds-button:focus {\n    box-shadow: none; }\n\nbutton.slds-button:focus {\n  box-shadow: none; }\n\n.stars-box {\n  margin-left: -6px; }\n", ""]);
 
 // exports
 
@@ -12290,6 +12290,7 @@ var Form = function (_React$Component) {
                             _react2.default.createElement('br', null),
                             _react2.default.createElement(_Valuation2.default, null)
                         ),
+                        _react2.default.createElement('div', { className: 'g-recaptcha slds-float--right', 'data-sitekey': '6LehsxcUAAAAAFGJqyqEmbPvUBtmy755NOuXJalz' }),
                         _react2.default.createElement(
                             'div',
                             { className: 'submit-button slds-m-top--large' },
@@ -12298,8 +12299,7 @@ var Form = function (_React$Component) {
                                 { type: 'submit', className: 'slds-button slds-button--brand' },
                                 'Send'
                             )
-                        ),
-                        _react2.default.createElement('div', { className: 'g-recaptcha', 'data-sitekey': '' })
+                        )
                     )
                 )
             );
@@ -12700,7 +12700,7 @@ var Valuation = function (_Component) {
 								{ className: 'stars-box' },
 								_react2.default.createElement(
 										'button',
-										{ className: 'slds-button slds-button--icon' },
+										{ className: 'slds-button slds-button--icon star-button' },
 										_react2.default.createElement(
 												'svg',
 												{ className: 'slds-button__icon slds-button__icon--large', 'aria-hidden': 'true' },
@@ -12714,7 +12714,7 @@ var Valuation = function (_Component) {
 								),
 								_react2.default.createElement(
 										'button',
-										{ className: 'slds-button slds-button--icon' },
+										{ className: 'slds-button slds-button--icon star-button' },
 										_react2.default.createElement(
 												'svg',
 												{ className: 'slds-button__icon slds-button__icon--large', 'aria-hidden': 'true' },
@@ -12728,7 +12728,7 @@ var Valuation = function (_Component) {
 								),
 								_react2.default.createElement(
 										'button',
-										{ className: 'slds-button slds-button--icon' },
+										{ className: 'slds-button slds-button--icon star-button' },
 										_react2.default.createElement(
 												'svg',
 												{ className: 'slds-button__icon slds-button__icon--large', 'aria-hidden': 'true' },
@@ -12742,7 +12742,7 @@ var Valuation = function (_Component) {
 								),
 								_react2.default.createElement(
 										'button',
-										{ className: 'slds-button slds-button--icon' },
+										{ className: 'slds-button slds-button--icon star-button' },
 										_react2.default.createElement(
 												'svg',
 												{ className: 'slds-button__icon slds-button__icon--large', 'aria-hidden': 'true' },
@@ -12756,7 +12756,7 @@ var Valuation = function (_Component) {
 								),
 								_react2.default.createElement(
 										'button',
-										{ className: 'slds-button slds-button--icon' },
+										{ className: 'slds-button slds-button--icon star-button' },
 										_react2.default.createElement(
 												'svg',
 												{ className: 'slds-button__icon slds-button__icon--large', 'aria-hidden': 'true' },
