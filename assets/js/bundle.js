@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5d5f03b36cccd8dc8535"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d90e072c32241b19d7d6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -5944,9 +5944,17 @@ throw new Error("Module build failed: \r\n@import \"../_mixins/_mixin-media-quer
 
 /***/ }),
 /* 37 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'C:\\Users\\Leandro\\Desktop\\Project\\react-review-app\\src\\components\\Form\\form.scss'\n    at Error (native)");
+exports = module.exports = __webpack_require__(15)();
+// imports
+
+
+// module
+exports.push([module.i, ".g-recaptcha {\n  margin-top: -2rem; }\n", ""]);
+
+// exports
+
 
 /***/ }),
 /* 38 */,
@@ -5977,7 +5985,20 @@ exports.push([module.i, ".comment {\n  font-family: 'Salesforce sans light';\n  
 throw new Error("Module build failed: \r\n@import \"../_mixins/_mixin-media-queries\";\r\n^\r\n      File to import not found or unreadable: C:\\Users\\Leandro\\Desktop\\Project\\react-review-app\\src\\components\\_mixins\\_mixin-media-queries.scss.\nParent style sheet: stdin\r\n      in C:\\Users\\Leandro\\Desktop\\Project\\react-review-app\\src\\components\\UserPhoto\\user-photo.scss (line 1, column 1)");
 
 /***/ }),
-/* 43 */,
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(15)();
+// imports
+
+
+// module
+exports.push([module.i, "svg.slds-button__icon, button.star-button {\n  fill: rgba(0, 0, 0, 0.16); }\n  svg.slds-button__icon:hover, svg.slds-button__icon:focus, button.star-button:hover, button.star-button:focus {\n    color: #ff9a3c; }\n\nbutton.slds-button + button.slds-button {\n  margin-left: -8px; }\n  button.slds-button + button.slds-button:focus {\n    box-shadow: none; }\n\nbutton.slds-button:focus {\n  box-shadow: none; }\n\n.stars-box {\n  margin-left: -6px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12461,10 +12482,124 @@ UserPhoto.defaultProps = {
 
 /***/ }),
 /* 123 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'C:\\Users\\Leandro\\Desktop\\Project\\react-review-app\\src\\components\\Valuation\\index.js'\n    at Error (native)");
+
+
+Object.defineProperty(exports, "__esModule", {
+		value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(13);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(227);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Valuation = function (_Component) {
+		_inherits(Valuation, _Component);
+
+		function Valuation() {
+				_classCallCheck(this, Valuation);
+
+				return _possibleConstructorReturn(this, (Valuation.__proto__ || Object.getPrototypeOf(Valuation)).apply(this, arguments));
+		}
+
+		_createClass(Valuation, [{
+				key: 'render',
+				value: function render() {
+						return _react2.default.createElement(
+								'div',
+								{ className: 'stars-box' },
+								_react2.default.createElement(
+										'button',
+										{ className: 'slds-button slds-button--icon star-button' },
+										_react2.default.createElement(
+												'svg',
+												{ className: 'slds-button__icon slds-button__icon--large', 'aria-hidden': 'true' },
+												_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+										),
+										_react2.default.createElement(
+												'span',
+												{ className: 'slds-assistive-text' },
+												'Valuation'
+										)
+								),
+								_react2.default.createElement(
+										'button',
+										{ className: 'slds-button slds-button--icon star-button' },
+										_react2.default.createElement(
+												'svg',
+												{ className: 'slds-button__icon slds-button__icon--large', 'aria-hidden': 'true' },
+												_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+										),
+										_react2.default.createElement(
+												'span',
+												{ className: 'slds-assistive-text' },
+												'Valuation'
+										)
+								),
+								_react2.default.createElement(
+										'button',
+										{ className: 'slds-button slds-button--icon star-button' },
+										_react2.default.createElement(
+												'svg',
+												{ className: 'slds-button__icon slds-button__icon--large', 'aria-hidden': 'true' },
+												_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+										),
+										_react2.default.createElement(
+												'span',
+												{ className: 'slds-assistive-text' },
+												'Valuation'
+										)
+								),
+								_react2.default.createElement(
+										'button',
+										{ className: 'slds-button slds-button--icon star-button' },
+										_react2.default.createElement(
+												'svg',
+												{ className: 'slds-button__icon slds-button__icon--large', 'aria-hidden': 'true' },
+												_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+										),
+										_react2.default.createElement(
+												'span',
+												{ className: 'slds-assistive-text' },
+												'Valuation'
+										)
+								),
+								_react2.default.createElement(
+										'button',
+										{ className: 'slds-button slds-button--icon star-button' },
+										_react2.default.createElement(
+												'svg',
+												{ className: 'slds-button__icon slds-button__icon--large', 'aria-hidden': 'true' },
+												_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+										),
+										_react2.default.createElement(
+												'span',
+												{ className: 'slds-assistive-text' },
+												'Valuation'
+										)
+								)
+						);
+				}
+		}]);
+
+		return Valuation;
+}(_react.Component);
+
+exports.default = Valuation;
 
 /***/ }),
 /* 124 */
@@ -24829,7 +24964,32 @@ if(true) {
 }
 
 /***/ }),
-/* 227 */,
+/* 227 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(43);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(17)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(true) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept(43, function() {
+			var newContent = __webpack_require__(43);
+			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
 /* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
