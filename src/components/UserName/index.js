@@ -4,7 +4,7 @@ export default class UserName extends Component {
 	
 	render() {
 		return (
-			<h2>{this.props.name}</h2>
+			<p><a href="javascript:void(0);" title={ this.props.name }> { this.props.name } </a></p>
 		);
 	}
 }
