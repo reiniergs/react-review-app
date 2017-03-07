@@ -35,7 +35,7 @@ var common = {
 if(TARGET === 'dev' || !TARGET) {
 	module.exports = merge(common, {
 		devtool: "#source-map",
-    watch: true,
+    	watch: true,
 		module: {
 			loaders: [
 				{
