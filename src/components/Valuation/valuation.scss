@@ -1,20 +1,23 @@
-svg.slds-button__icon, button.star-button {
+.star-button {
 	fill: rgba(#000, 0.16);
-	&:hover, &:focus {
-		color: #ff9a3c;
+	float: right;
+}
+div.stars-box {
+	margin-left: -10px;
+	display: inline-block;
+	.slds-button:hover, .slds-button:focus {
+		fill: #ff9a3c;
+	}
+	.slds-button:hover ~ .slds-button, .slds-button:focus ~ .slds-button {
+		fill: #ff9a3c;
 	}
 }
-button.slds-button + button.slds-button {
-	margin-left: -8px;
+a.slds-button {
+	margin-right: -10px;
 	&:focus {
-		box-shadow: none;
+		box-shadow: none !important;
 	}
 }
-button.slds-button {
-	&:focus {
-		box-shadow: none;
-	}
-}
-.stars-box {
-	margin-left: -6px;
+a.last-star {
+	margin-left: 5px;
 }
