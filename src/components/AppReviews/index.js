@@ -42,7 +42,7 @@ export default class AppReviews extends Component {
         //The toString() use is to return a true or false value, because an array is always true
         if (reviews.toString()) {
             return reviews.map(rev => {
-                return <UserBox key={ rev.id } name={ rev.title } comment={ rev.comment } photo={ rev.avatar } date={ rev.createdAt } />
+                return <UserBox key={ rev.id } name={ rev.title } comment={ rev.comment } photo={ rev.avatar } date={ rev.createdAt } valuation={ rev.valuation } />
             })
         } else {
             //It's not finished. Only to show something when there is not reviews to show

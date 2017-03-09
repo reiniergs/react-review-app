@@ -4,11 +4,12 @@ import UserPhoto from '../UserPhoto';
 import UserName from '../UserName';
 import UserComment from '../UserComment';
 import PostDate from '../PostDate';
+import RenderValuation from '../RenderValuation';
 
 export default class UserBox extends Component {
 
     render() {
-        const { name, comment, photo, date } = this.props;
+        const { name, comment, photo, date, valuation } = this.props;
         return (
             <article className="slds-card slds-m-bottom--x-large">
                 <div className="slds-card__header slds-grid">
@@ -41,7 +42,8 @@ export default class UserBox extends Component {
                             <UserComment comment={ comment } />
                         </div>
                         <footer className="slds-post__footer">
-                        
+                            <RenderValuation valuation={ valuation } />
+                            <span className="valuation">Valuation</span>
                         </footer>
                     </article>
                 </div>

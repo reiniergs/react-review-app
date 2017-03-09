@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "63c8ec8268cc45e02547"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ddfbcbb3a95f40b046d4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -5651,7 +5651,7 @@ exports = module.exports = __webpack_require__(37)();
 
 
 // module
-exports.push([module.i, "article.slds-post {\n  background: #f4f6f9; }\n", ""]);
+exports.push([module.i, "article.slds-post {\n  background: #f4f6f9; }\n\n.valuation {\n  margin-left: 1rem;\n  margin-top: 0.25rem;\n  font-size: 0.8rem; }\n  @media only screen and (max-width: 760px) {\n    .valuation {\n      display: inline-block;\n      margin-left: 0; } }\n", ""]);
 
 // exports
 
@@ -5665,7 +5665,7 @@ exports = module.exports = __webpack_require__(37)();
 
 
 // module
-exports.push([module.i, ".star-button {\n  fill: rgba(0, 0, 0, 0.16);\n  float: right; }\n\ndiv.stars-box {\n  margin-left: -10px;\n  display: inline-block; }\n  div.stars-box button.slds-button:hover, div.stars-box button.slds-button:focus {\n    fill: #ff9a3c; }\n  div.stars-box button.slds-button:hover ~ button.slds-button, div.stars-box button.slds-button:focus ~ button.slds-button {\n    fill: #ff9a3c; }\n\nbutton.slds-button {\n  margin-right: -10px; }\n  button.slds-button:focus {\n    box-shadow: none !important; }\n\nbutton.last-star {\n  margin-left: 5px; }\n", ""]);
+exports.push([module.i, ".star-button {\n  fill: rgba(0, 0, 0, 0.16);\n  float: right; }\n\ndiv.stars-box {\n  margin-left: -10px;\n  display: inline-block; }\n  div.stars-box button.slds-button:hover, div.stars-box button.slds-button:focus {\n    fill: #ff9a3c; }\n  div.stars-box button.slds-button:hover ~ button.slds-button, div.stars-box button.slds-button:focus ~ button.slds-button {\n    fill: #ff9a3c; }\n\nbutton.slds-button {\n  margin-right: -12px; }\n  button.slds-button:focus {\n    box-shadow: none !important; }\n\nbutton.last-star {\n  margin-left: 5px; }\n", ""]);
 
 // exports
 
@@ -11202,7 +11202,7 @@ var AppReviews = function (_Component) {
 
             if (reviews.toString()) {
                 return reviews.map(function (rev) {
-                    return _react2.default.createElement(_UserBox2.default, { key: rev.id, name: rev.title, comment: rev.comment, photo: rev.avatar, date: rev.createdAt });
+                    return _react2.default.createElement(_UserBox2.default, { key: rev.id, name: rev.title, comment: rev.comment, photo: rev.avatar, date: rev.createdAt, valuation: rev.valuation });
                 });
             } else {
                 //It's not finished. Only to show something when there is not reviews to show
@@ -12104,8 +12104,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var initialState = { title: '', email: '', comment: '', valuation: '' };
 
-var Form = function (_React$Component) {
-    _inherits(Form, _React$Component);
+var Form = function (_Component) {
+    _inherits(Form, _Component);
 
     function Form(props) {
         _classCallCheck(this, Form);
@@ -12243,7 +12243,7 @@ var Form = function (_React$Component) {
     }]);
 
     return Form;
-}(_react2.default.Component);
+}(_react.Component);
 
 exports.default = Form;
 
@@ -12347,6 +12347,10 @@ var _PostDate = __webpack_require__(113);
 
 var _PostDate2 = _interopRequireDefault(_PostDate);
 
+var _RenderValuation = __webpack_require__(220);
+
+var _RenderValuation2 = _interopRequireDefault(_RenderValuation);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12371,7 +12375,8 @@ var UserBox = function (_Component) {
                 name = _props.name,
                 comment = _props.comment,
                 photo = _props.photo,
-                date = _props.date;
+                date = _props.date,
+                valuation = _props.valuation;
 
             return _react2.default.createElement(
                 'article',
@@ -12417,7 +12422,16 @@ var UserBox = function (_Component) {
                             { className: 'slds-post__content slds-text-longform' },
                             _react2.default.createElement(_UserComment2.default, { comment: comment })
                         ),
-                        _react2.default.createElement('footer', { className: 'slds-post__footer' })
+                        _react2.default.createElement(
+                            'footer',
+                            { className: 'slds-post__footer' },
+                            _react2.default.createElement(_RenderValuation2.default, { valuation: valuation }),
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'valuation' },
+                                'Valuation'
+                            )
+                        )
                     )
                 ),
                 _react2.default.createElement('div', { className: 'slds-card__footer' })
@@ -12652,10 +12666,10 @@ var Valuation = function (_Component) {
 								{ className: 'stars-box' },
 								_react2.default.createElement(
 										'button',
-										{ className: 'slds-button star-button last-star', onClick: this.handleStarClick },
+										{ id: '5', className: 'slds-button star-button last-star', onClick: this.handleStarClick },
 										_react2.default.createElement(
 												'svg',
-												{ className: 'slds-button__icon--large', 'aria-hidden': 'true' },
+												{ id: '5', className: 'slds-button__icon--large', 'aria-hidden': 'true' },
 												_react2.default.createElement('use', { id: '5', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
@@ -12666,10 +12680,10 @@ var Valuation = function (_Component) {
 								),
 								_react2.default.createElement(
 										'button',
-										{ className: 'slds-button star-button', onClick: this.handleStarClick },
+										{ id: '4', className: 'slds-button star-button', onClick: this.handleStarClick },
 										_react2.default.createElement(
 												'svg',
-												{ className: 'slds-button__icon--large', 'aria-hidden': 'true' },
+												{ id: '4', className: 'slds-button__icon--large', 'aria-hidden': 'true' },
 												_react2.default.createElement('use', { id: '4', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
@@ -12680,10 +12694,10 @@ var Valuation = function (_Component) {
 								),
 								_react2.default.createElement(
 										'button',
-										{ className: 'slds-button star-button', onClick: this.handleStarClick },
+										{ id: '3', className: 'slds-button star-button', onClick: this.handleStarClick },
 										_react2.default.createElement(
 												'svg',
-												{ className: 'slds-button__icon--large', 'aria-hidden': 'true' },
+												{ id: '3', className: 'slds-button__icon--large', 'aria-hidden': 'true' },
 												_react2.default.createElement('use', { id: '3', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
@@ -12694,10 +12708,10 @@ var Valuation = function (_Component) {
 								),
 								_react2.default.createElement(
 										'button',
-										{ className: 'slds-button star-button', onClick: this.handleStarClick },
+										{ id: '2', className: 'slds-button star-button', onClick: this.handleStarClick },
 										_react2.default.createElement(
 												'svg',
-												{ className: 'slds-button__icon--large', 'aria-hidden': 'true' },
+												{ id: '2', className: 'slds-button__icon--large', 'aria-hidden': 'true' },
 												_react2.default.createElement('use', { id: '2', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
@@ -12708,10 +12722,10 @@ var Valuation = function (_Component) {
 								),
 								_react2.default.createElement(
 										'button',
-										{ className: 'slds-button star-button', onClick: this.handleStarClick },
+										{ id: '1', className: 'slds-button star-button', onClick: this.handleStarClick },
 										_react2.default.createElement(
 												'svg',
-												{ className: 'slds-button__icon--large', 'aria-hidden': 'true' },
+												{ id: '1', className: 'slds-button__icon--large', 'aria-hidden': 'true' },
 												_react2.default.createElement('use', { id: '1', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
@@ -25059,6 +25073,178 @@ var _AppReviews2 = _interopRequireDefault(_AppReviews);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(_AppReviews2.default, null), document.getElementById('app'));
+
+/***/ }),
+/* 219 */,
+/* 220 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(13);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(222);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RenderValuation = function (_Component) {
+	_inherits(RenderValuation, _Component);
+
+	function RenderValuation() {
+		_classCallCheck(this, RenderValuation);
+
+		return _possibleConstructorReturn(this, (RenderValuation.__proto__ || Object.getPrototypeOf(RenderValuation)).apply(this, arguments));
+	}
+
+	_createClass(RenderValuation, [{
+		key: 'render',
+		value: function render() {
+			var valuation = this.props.valuation;
+
+			var elementsArray = [_react2.default.createElement(
+				'svg',
+				{ key: '1', style: { fill: "" }, className: 'slds-button__icon--large rendered-stars', 'aria-hidden': 'true' },
+				_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+			), _react2.default.createElement(
+				'svg',
+				{ key: '2', style: { fill: "" }, className: 'slds-button__icon--large rendered-stars', 'aria-hidden': 'true' },
+				_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+			), _react2.default.createElement(
+				'svg',
+				{ key: '3', style: { fill: "" }, className: 'slds-button__icon--large rendered-stars', 'aria-hidden': 'true' },
+				_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+			), _react2.default.createElement(
+				'svg',
+				{ key: '4', style: { fill: "" }, className: 'slds-button__icon--large rendered-stars', 'aria-hidden': 'true' },
+				_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+			), _react2.default.createElement(
+				'svg',
+				{ key: '5', style: { fill: "" }, className: 'slds-button__icon--large rendered-stars', 'aria-hidden': 'true' },
+				_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+			)];
+
+			switch (valuation) {
+				case "1":
+					elementsArray[0].props.style.fill = '#ff9a3c';
+					return _react2.default.createElement(
+						'div',
+						{ className: 'star-box' },
+						elementsArray
+					);
+					break;
+				case "2":
+					elementsArray[0].props.style.fill = '#ff9a3c';
+					elementsArray[1].props.style.fill = '#ff9a3c';
+					return _react2.default.createElement(
+						'div',
+						{ className: 'star-box' },
+						elementsArray
+					);
+					break;
+				case "3":
+					elementsArray[0].props.style.fill = '#ff9a3c';
+					elementsArray[1].props.style.fill = '#ff9a3c';
+					elementsArray[2].props.style.fill = '#ff9a3c';
+					return _react2.default.createElement(
+						'div',
+						{ className: 'star-box' },
+						elementsArray
+					);
+					break;
+				case "4":
+					elementsArray[0].props.style.fill = '#ff9a3c';
+					elementsArray[1].props.style.fill = '#ff9a3c';
+					elementsArray[2].props.style.fill = '#ff9a3c';
+					elementsArray[3].props.style.fill = '#ff9a3c';
+					return _react2.default.createElement(
+						'div',
+						{ className: 'star-box' },
+						elementsArray
+					);
+					break;
+				case "5":
+					elementsArray[0].props.style.fill = '#ff9a3c';
+					elementsArray[1].props.style.fill = '#ff9a3c';
+					elementsArray[2].props.style.fill = '#ff9a3c';
+					elementsArray[3].props.style.fill = '#ff9a3c';
+					elementsArray[4].props.style.fill = '#ff9a3c';
+					return _react2.default.createElement(
+						'div',
+						{ className: 'star-box' },
+						elementsArray
+					);
+					break;
+
+				default:
+					return _react2.default.createElement(
+						'div',
+						{ className: 'star-box' },
+						elementsArray
+					);
+					break;
+			}
+		}
+	}]);
+
+	return RenderValuation;
+}(_react.Component);
+
+exports.default = RenderValuation;
+
+/***/ }),
+/* 221 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(37)();
+// imports
+
+
+// module
+exports.push([module.i, "svg.rendered-stars {\n  margin-right: -5px;\n  fill: rgba(0, 0, 0, 0.16); }\n\n.star-box {\n  margin-left: -5px; }\n  @media only screen and (max-width: 760px) {\n    .star-box {\n      display: inline-block; } }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 222 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(221);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(59)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(true) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept(221, function() {
+			var newContent = __webpack_require__(221);
+			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

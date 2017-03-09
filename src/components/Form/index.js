@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const initialState = { title: '', email: '', comment: '', valuation: '' };
 
-export default class Form extends React.Component {
+export default class Form extends Component {
 
     constructor(props) {
         super(props);

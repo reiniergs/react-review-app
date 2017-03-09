@@ -20,32 +20,32 @@ export default class Valuation extends Component {
 	render() {
 		return (
 			<div className="stars-box">
-				<button className="slds-button star-button last-star" onClick={this.handleStarClick} >
-		  			<svg className="slds-button__icon--large" aria-hidden="true">
+				<button id="5" className="slds-button star-button last-star" onClick={this.handleStarClick} >
+		  			<svg id="5" className="slds-button__icon--large" aria-hidden="true">
 				    	<use id="5" href="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
 				  	</svg>
 				  	<span className="slds-assistive-text">Valuation</span>
 				</button>
-				<button className="slds-button star-button" onClick={ this.handleStarClick } >
-		  			<svg className="slds-button__icon--large" aria-hidden="true">
+				<button id="4" className="slds-button star-button" onClick={ this.handleStarClick } >
+		  			<svg id="4" className="slds-button__icon--large" aria-hidden="true">
 				    	<use id="4" href="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
 				  	</svg>
 				  	<span className="slds-assistive-text">Valuation</span>
 				</button>
-				<button className="slds-button star-button" onClick={ this.handleStarClick } >
-		  			<svg className="slds-button__icon--large" aria-hidden="true">
+				<button id="3" className="slds-button star-button" onClick={ this.handleStarClick } >
+		  			<svg id="3" className="slds-button__icon--large" aria-hidden="true">
 				    	<use id="3"  href="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
 				  	</svg>
 				  	<span className="slds-assistive-text">Valuation</span>
 				</button>
-				<button className="slds-button star-button" onClick={ this.handleStarClick } >
-		  			<svg className="slds-button__icon--large" aria-hidden="true">
+				<button id="2" className="slds-button star-button" onClick={ this.handleStarClick } >
+		  			<svg id="2" className="slds-button__icon--large" aria-hidden="true">
 				    	<use id="2"  href="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
 				  	</svg>
 				  	<span className="slds-assistive-text">Valuation</span>
 				</button>
-				<button className="slds-button star-button" onClick={ this.handleStarClick } >
-		  			<svg className="slds-button__icon--large" aria-hidden="true">
+				<button id="1" className="slds-button star-button" onClick={ this.handleStarClick } >
+		  			<svg id="1" className="slds-button__icon--large" aria-hidden="true">
 				    	<use id="1"  href="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
 				  	</svg>
 				  	<span className="slds-assistive-text">Valuation</span>
