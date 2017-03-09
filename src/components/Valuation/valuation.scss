@@ -5,19 +5,19 @@
 div.stars-box {
 	margin-left: -10px;
 	display: inline-block;
-	.slds-button:hover, .slds-button:focus {
+	button.slds-button:hover, button.slds-button:focus {
 		fill: #ff9a3c;
 	}
-	.slds-button:hover ~ .slds-button, .slds-button:focus ~ .slds-button {
+	button.slds-button:hover ~ button.slds-button, button.slds-button:focus ~ button.slds-button {
 		fill: #ff9a3c;
 	}
 }
-a.slds-button {
+button.slds-button {
 	margin-right: -10px;
 	&:focus {
 		box-shadow: none !important;
 	}
 }
-a.last-star {
+button.last-star {
 	margin-left: 5px;
 }

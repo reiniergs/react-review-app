@@ -36,8 +36,8 @@ export default class Form extends React.Component {
             })
     }
 
-    addValuation() {
-        const { valuation } = this.state;
+    addValuation(valuation) {
+        this.setState({valuation: valuation});
     }
 
     render() {
@@ -65,7 +65,7 @@ export default class Form extends React.Component {
                         </div>
                         <div className="slds-m-top--medium">
                             <label className="slds-form-element__label">Your Valuation</label><br/>
-                            <Valuation name="valuation" value={ valuation } onNewValuation={ this.addValuation } />
+                            <Valuation onNewValuation={ this.addValuation } />
                         </div>
                         <div className="g-recaptcha slds-float--right" data-sitekey="6LehsxcUAAAAAFGJqyqEmbPvUBtmy755NOuXJalz"></div>
                         <div className="submit-button slds-m-top--large">

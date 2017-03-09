@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "2e3b45d0f6c67f95b7f4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "63c8ec8268cc45e02547"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -5665,7 +5665,7 @@ exports = module.exports = __webpack_require__(37)();
 
 
 // module
-exports.push([module.i, ".star-button {\n  fill: rgba(0, 0, 0, 0.16);\n  float: right; }\n\ndiv.stars-box {\n  margin-left: -10px;\n  display: inline-block; }\n  div.stars-box .slds-button:hover, div.stars-box .slds-button:focus {\n    fill: #ff9a3c; }\n  div.stars-box .slds-button:hover ~ .slds-button, div.stars-box .slds-button:focus ~ .slds-button {\n    fill: #ff9a3c; }\n\na.slds-button {\n  margin-right: -10px; }\n  a.slds-button:focus {\n    box-shadow: none !important; }\n\na.last-star {\n  margin-left: 5px; }\n", ""]);
+exports.push([module.i, ".star-button {\n  fill: rgba(0, 0, 0, 0.16);\n  float: right; }\n\ndiv.stars-box {\n  margin-left: -10px;\n  display: inline-block; }\n  div.stars-box button.slds-button:hover, div.stars-box button.slds-button:focus {\n    fill: #ff9a3c; }\n  div.stars-box button.slds-button:hover ~ button.slds-button, div.stars-box button.slds-button:focus ~ button.slds-button {\n    fill: #ff9a3c; }\n\nbutton.slds-button {\n  margin-right: -10px; }\n  button.slds-button:focus {\n    box-shadow: none !important; }\n\nbutton.last-star {\n  margin-left: 5px; }\n", ""]);
 
 // exports
 
@@ -12151,8 +12151,8 @@ var Form = function (_React$Component) {
         }
     }, {
         key: 'addValuation',
-        value: function addValuation() {
-            var valuation = this.state.valuation;
+        value: function addValuation(valuation) {
+            this.setState({ valuation: valuation });
         }
     }, {
         key: 'render',
@@ -12224,7 +12224,7 @@ var Form = function (_React$Component) {
                                 'Your Valuation'
                             ),
                             _react2.default.createElement('br', null),
-                            _react2.default.createElement(_Valuation2.default, { name: 'valuation', value: valuation, onNewValuation: this.addValuation })
+                            _react2.default.createElement(_Valuation2.default, { onNewValuation: this.addValuation })
                         ),
                         _react2.default.createElement('div', { className: 'g-recaptcha slds-float--right', 'data-sitekey': '6LehsxcUAAAAAFGJqyqEmbPvUBtmy755NOuXJalz' }),
                         _react2.default.createElement(
@@ -12623,25 +12623,40 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Valuation = function (_Component) {
 		_inherits(Valuation, _Component);
 
-		function Valuation() {
+		function Valuation(props) {
 				_classCallCheck(this, Valuation);
 
-				return _possibleConstructorReturn(this, (Valuation.__proto__ || Object.getPrototypeOf(Valuation)).apply(this, arguments));
+				var _this = _possibleConstructorReturn(this, (Valuation.__proto__ || Object.getPrototypeOf(Valuation)).call(this, props));
+
+				_this.state = { valuation: '' };
+
+				_this.handleStarClick = _this.handleStarClick.bind(_this);
+				return _this;
 		}
 
 		_createClass(Valuation, [{
+				key: 'handleStarClick',
+				value: function handleStarClick(event) {
+						event.preventDefault();
+						var onNewValuation = this.props.onNewValuation;
+
+						var valuation = event.target.id;
+						this.setState({ valuation: valuation });
+						onNewValuation(valuation);
+				}
+		}, {
 				key: 'render',
 				value: function render() {
 						return _react2.default.createElement(
 								'div',
 								{ className: 'stars-box' },
 								_react2.default.createElement(
-										'a',
-										{ href: 'javascript:void', className: 'slds-button star-button last-star' },
+										'button',
+										{ className: 'slds-button star-button last-star', onClick: this.handleStarClick },
 										_react2.default.createElement(
 												'svg',
 												{ className: 'slds-button__icon--large', 'aria-hidden': 'true' },
-												_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+												_react2.default.createElement('use', { id: '5', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
 												'span',
@@ -12650,12 +12665,12 @@ var Valuation = function (_Component) {
 										)
 								),
 								_react2.default.createElement(
-										'a',
-										{ href: 'javascript:void', className: 'slds-button star-button' },
+										'button',
+										{ className: 'slds-button star-button', onClick: this.handleStarClick },
 										_react2.default.createElement(
 												'svg',
 												{ className: 'slds-button__icon--large', 'aria-hidden': 'true' },
-												_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+												_react2.default.createElement('use', { id: '4', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
 												'span',
@@ -12664,12 +12679,12 @@ var Valuation = function (_Component) {
 										)
 								),
 								_react2.default.createElement(
-										'a',
-										{ href: 'javascript:void', className: 'slds-button star-button' },
+										'button',
+										{ className: 'slds-button star-button', onClick: this.handleStarClick },
 										_react2.default.createElement(
 												'svg',
 												{ className: 'slds-button__icon--large', 'aria-hidden': 'true' },
-												_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+												_react2.default.createElement('use', { id: '3', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
 												'span',
@@ -12678,12 +12693,12 @@ var Valuation = function (_Component) {
 										)
 								),
 								_react2.default.createElement(
-										'a',
-										{ href: 'javascript:void', className: 'slds-button star-button' },
+										'button',
+										{ className: 'slds-button star-button', onClick: this.handleStarClick },
 										_react2.default.createElement(
 												'svg',
 												{ className: 'slds-button__icon--large', 'aria-hidden': 'true' },
-												_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+												_react2.default.createElement('use', { id: '2', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
 												'span',
@@ -12692,12 +12707,12 @@ var Valuation = function (_Component) {
 										)
 								),
 								_react2.default.createElement(
-										'a',
-										{ href: 'javascript:void', className: 'slds-button star-button' },
+										'button',
+										{ className: 'slds-button star-button', onClick: this.handleStarClick },
 										_react2.default.createElement(
 												'svg',
 												{ className: 'slds-button__icon--large', 'aria-hidden': 'true' },
-												_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+												_react2.default.createElement('use', { id: '1', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
 												'span',
