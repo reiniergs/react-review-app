@@ -1,9 +1,14 @@
 import React, { Component, PropTypes } from 'react';
-import './form.scss';
 import Valuation from '../Valuation';
+import ReCaptcha from '../ReCaptcha';
 import axios from 'axios';
 
 const initialState = { title: '', email: '', comment: '', valuation: '' };
+
+const verifyCallback = (response) => {
+    console.log('ok entro bien');
+    console.log(response);
+}
 
 export default class Form extends Component {
 
@@ -67,9 +72,9 @@ export default class Form extends Component {
                             <label className="slds-form-element__label">Your Valuation</label><br/>
                             <Valuation onNewValuation={ this.addValuation } />
                         </div>
-                        <div className="g-recaptcha slds-float--right" data-sitekey="6LehsxcUAAAAAFGJqyqEmbPvUBtmy755NOuXJalz"></div>
+                        <ReCaptcha sitekey="6LehsxcUAAAAAFGJqyqEmbPvUBtmy755NOuXJalz"  verifyCallback={ verifyCallback } />
                         <div className="submit-button slds-m-top--large">
-                            <button type="submit" className="slds-button slds-button--brand">Send</button>
+                            <button type="submit" id="submit-btn" className="slds-button slds-button--brand">Send</button>
                         </div>
                     </div>
                 </fieldset>

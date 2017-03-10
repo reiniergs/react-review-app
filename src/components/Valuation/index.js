@@ -14,7 +14,9 @@ export default class Valuation extends Component {
     	const { onNewValuation } = this.props;
     	const valuation = event.target.id;
     	this.setState({ valuation: valuation});
-    	onNewValuation(valuation);
+    	if (typeof onNewValuation === 'function') {
+    		onNewValuation(valuation);
+    	}
     }
 
 	render() {
@@ -22,31 +24,31 @@ export default class Valuation extends Component {
 			<div className="stars-box">
 				<button id="5" className="slds-button star-button last-star" onClick={this.handleStarClick} >
 		  			<svg id="5" className="slds-button__icon--large" aria-hidden="true">
-				    	<use id="5" href="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
+				    	<use id="5" xlinkHref="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
 				  	</svg>
 				  	<span className="slds-assistive-text">Valuation</span>
 				</button>
 				<button id="4" className="slds-button star-button" onClick={ this.handleStarClick } >
 		  			<svg id="4" className="slds-button__icon--large" aria-hidden="true">
-				    	<use id="4" href="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
+				    	<use id="4" xlinkHref="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
 				  	</svg>
 				  	<span className="slds-assistive-text">Valuation</span>
 				</button>
 				<button id="3" className="slds-button star-button" onClick={ this.handleStarClick } >
 		  			<svg id="3" className="slds-button__icon--large" aria-hidden="true">
-				    	<use id="3"  href="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
+				    	<use id="3"  xlinkHref="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
 				  	</svg>
 				  	<span className="slds-assistive-text">Valuation</span>
 				</button>
 				<button id="2" className="slds-button star-button" onClick={ this.handleStarClick } >
 		  			<svg id="2" className="slds-button__icon--large" aria-hidden="true">
-				    	<use id="2"  href="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
+				    	<use id="2"  xlinkHref="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
 				  	</svg>
 				  	<span className="slds-assistive-text">Valuation</span>
 				</button>
 				<button id="1" className="slds-button star-button" onClick={ this.handleStarClick } >
 		  			<svg id="1" className="slds-button__icon--large" aria-hidden="true">
-				    	<use id="1"  href="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
+				    	<use id="1"  xlinkHref="../icons/custom-sprite/svg/symbols.svg#custom11"></use>
 				  	</svg>
 				  	<span className="slds-assistive-text">Valuation</span>
 				</button>

@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ddfbcbb3a95f40b046d4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d76b8368b57d87e4bf6c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -5629,20 +5629,7 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(37)();
-// imports
-
-
-// module
-exports.push([module.i, ".g-recaptcha {\n  margin-top: -2rem; }\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 34 */,
 /* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12082,11 +12069,13 @@ var _react = __webpack_require__(13);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(215);
-
 var _Valuation = __webpack_require__(118);
 
 var _Valuation2 = _interopRequireDefault(_Valuation);
+
+var _ReCaptcha = __webpack_require__(224);
+
+var _ReCaptcha2 = _interopRequireDefault(_ReCaptcha);
 
 var _axios = __webpack_require__(60);
 
@@ -12103,6 +12092,11 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var initialState = { title: '', email: '', comment: '', valuation: '' };
+
+var verifyCallback = function verifyCallback(response) {
+    console.log('ok entro bien');
+    console.log(response);
+};
 
 var Form = function (_Component) {
     _inherits(Form, _Component);
@@ -12226,13 +12220,13 @@ var Form = function (_Component) {
                             _react2.default.createElement('br', null),
                             _react2.default.createElement(_Valuation2.default, { onNewValuation: this.addValuation })
                         ),
-                        _react2.default.createElement('div', { className: 'g-recaptcha slds-float--right', 'data-sitekey': '6LehsxcUAAAAAFGJqyqEmbPvUBtmy755NOuXJalz' }),
+                        _react2.default.createElement(_ReCaptcha2.default, { sitekey: '6LehsxcUAAAAAFGJqyqEmbPvUBtmy755NOuXJalz', verifyCallback: verifyCallback }),
                         _react2.default.createElement(
                             'div',
                             { className: 'submit-button slds-m-top--large' },
                             _react2.default.createElement(
                                 'button',
-                                { type: 'submit', className: 'slds-button slds-button--brand' },
+                                { type: 'submit', id: 'submit-btn', className: 'slds-button slds-button--brand' },
                                 'Send'
                             )
                         )
@@ -12656,7 +12650,9 @@ var Valuation = function (_Component) {
 
 						var valuation = event.target.id;
 						this.setState({ valuation: valuation });
-						onNewValuation(valuation);
+						if (typeof onNewValuation === 'function') {
+								onNewValuation(valuation);
+						}
 				}
 		}, {
 				key: 'render',
@@ -12670,7 +12666,7 @@ var Valuation = function (_Component) {
 										_react2.default.createElement(
 												'svg',
 												{ id: '5', className: 'slds-button__icon--large', 'aria-hidden': 'true' },
-												_react2.default.createElement('use', { id: '5', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+												_react2.default.createElement('use', { id: '5', xlinkHref: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
 												'span',
@@ -12684,7 +12680,7 @@ var Valuation = function (_Component) {
 										_react2.default.createElement(
 												'svg',
 												{ id: '4', className: 'slds-button__icon--large', 'aria-hidden': 'true' },
-												_react2.default.createElement('use', { id: '4', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+												_react2.default.createElement('use', { id: '4', xlinkHref: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
 												'span',
@@ -12698,7 +12694,7 @@ var Valuation = function (_Component) {
 										_react2.default.createElement(
 												'svg',
 												{ id: '3', className: 'slds-button__icon--large', 'aria-hidden': 'true' },
-												_react2.default.createElement('use', { id: '3', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+												_react2.default.createElement('use', { id: '3', xlinkHref: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
 												'span',
@@ -12712,7 +12708,7 @@ var Valuation = function (_Component) {
 										_react2.default.createElement(
 												'svg',
 												{ id: '2', className: 'slds-button__icon--large', 'aria-hidden': 'true' },
-												_react2.default.createElement('use', { id: '2', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+												_react2.default.createElement('use', { id: '2', xlinkHref: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
 												'span',
@@ -12726,7 +12722,7 @@ var Valuation = function (_Component) {
 										_react2.default.createElement(
 												'svg',
 												{ id: '1', className: 'slds-button__icon--large', 'aria-hidden': 'true' },
-												_react2.default.createElement('use', { id: '1', href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+												_react2.default.createElement('use', { id: '1', xlinkHref: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 										),
 										_react2.default.createElement(
 												'span',
@@ -24974,32 +24970,7 @@ module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 215 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(34);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(59)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(true) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept(34, function() {
-			var newContent = __webpack_require__(34);
-			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
+/* 215 */,
 /* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25119,23 +25090,23 @@ var RenderValuation = function (_Component) {
 			var elementsArray = [_react2.default.createElement(
 				'svg',
 				{ key: '1', style: { fill: "" }, className: 'slds-button__icon--large rendered-stars', 'aria-hidden': 'true' },
-				_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+				_react2.default.createElement('use', { xlinkHref: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 			), _react2.default.createElement(
 				'svg',
 				{ key: '2', style: { fill: "" }, className: 'slds-button__icon--large rendered-stars', 'aria-hidden': 'true' },
-				_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+				_react2.default.createElement('use', { xlinkHref: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 			), _react2.default.createElement(
 				'svg',
 				{ key: '3', style: { fill: "" }, className: 'slds-button__icon--large rendered-stars', 'aria-hidden': 'true' },
-				_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+				_react2.default.createElement('use', { xlinkHref: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 			), _react2.default.createElement(
 				'svg',
 				{ key: '4', style: { fill: "" }, className: 'slds-button__icon--large rendered-stars', 'aria-hidden': 'true' },
-				_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+				_react2.default.createElement('use', { xlinkHref: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 			), _react2.default.createElement(
 				'svg',
 				{ key: '5', style: { fill: "" }, className: 'slds-button__icon--large rendered-stars', 'aria-hidden': 'true' },
-				_react2.default.createElement('use', { href: '../icons/custom-sprite/svg/symbols.svg#custom11' })
+				_react2.default.createElement('use', { xlinkHref: '../icons/custom-sprite/svg/symbols.svg#custom11' })
 			)];
 
 			switch (valuation) {
@@ -25215,7 +25186,7 @@ exports = module.exports = __webpack_require__(37)();
 
 
 // module
-exports.push([module.i, "svg.rendered-stars {\n  margin-right: -5px;\n  fill: rgba(0, 0, 0, 0.16); }\n\n.star-box {\n  margin-left: -5px; }\n  @media only screen and (max-width: 760px) {\n    .star-box {\n      display: inline-block; } }\n", ""]);
+exports.push([module.i, "svg.rendered-stars {\n  margin-right: -5px;\n  fill: rgba(0, 0, 0, 0.16); }\n\n.star-box {\n  margin-left: -5px; }\n", ""]);
 
 // exports
 
@@ -25238,6 +25209,95 @@ if(true) {
 	if(!content.locals) {
 		module.hot.accept(221, function() {
 			var newContent = __webpack_require__(221);
+			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 223 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(37)();
+// imports
+
+
+// module
+exports.push([module.i, ".g-recaptcha {\n  float: right;\n  margin-top: -2rem; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 224 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(13);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(225);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ReCaptcha = function (_Component) {
+	_inherits(ReCaptcha, _Component);
+
+	function ReCaptcha() {
+		_classCallCheck(this, ReCaptcha);
+
+		return _possibleConstructorReturn(this, (ReCaptcha.__proto__ || Object.getPrototypeOf(ReCaptcha)).apply(this, arguments));
+	}
+
+	_createClass(ReCaptcha, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement('div', { className: 'g-recaptcha',
+				'data-sitekey': this.props.sitekey });
+		}
+	}]);
+
+	return ReCaptcha;
+}(_react.Component);
+
+exports.default = ReCaptcha;
+
+/***/ }),
+/* 225 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(223);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(59)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(true) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept(223, function() {
+			var newContent = __webpack_require__(223);
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
