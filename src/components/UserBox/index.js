@@ -4,11 +4,12 @@ import UserPhoto from '../UserPhoto';
 import UserName from '../UserName';
 import UserComment from '../UserComment';
 import PostDate from '../PostDate';
+import RenderValuation from '../RenderValuation';
 
 export default class UserBox extends Component {
 
     render() {
-        const { name, comment, photo, date } = this.props;
+        const { name, comment, photo, date, valuation } = this.props;
         return (
             <article className="slds-card slds-m-bottom--x-large">
                 <div className="slds-card__header slds-grid">
@@ -26,23 +27,24 @@ export default class UserBox extends Component {
                 </div>
                 <div className="slds-card__body">
                     <article className="slds-post">
-                      <header className="slds-post__header slds-media">
-                        <div className="slds-media__figure">
-                          <UserPhoto photo={ photo } name={ name } />
+                        <header className="slds-post__header slds-media">
+                            <div className="slds-media__figure">
+                                <UserPhoto photo={ photo } name={ name } />
+                            </div>
+                            <div className="slds-media__body">
+                                <div className="slds-grid slds-grid--align-spread slds-has-flexi-truncate">
+                                    <UserName name={ name } />
+                                </div>
+                                <PostDate date={ date } />
+                            </div>
+                        </header>
+                        <div className="slds-post__content slds-text-longform">
+                            <UserComment comment={ comment } />
                         </div>
-                        <div className="slds-media__body">
-                          <div className="slds-grid slds-grid--align-spread slds-has-flexi-truncate">
-                            <UserName name={ name } />
-                          </div>
-                          <PostDate date={ date } />
-                        </div>
-                      </header>
-                      <div className="slds-post__content slds-text-longform">
-                        <UserComment comment={ comment } />
-                      </div>
-                      <footer className="slds-post__footer">
-                        
-                      </footer>
+                        <footer className="slds-post__footer">
+                            <RenderValuation valuation={ valuation } />
+                            <span className="valuation">Valuation</span>
+                        </footer>
                     </article>
                 </div>
                 <div className="slds-card__footer">

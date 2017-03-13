@@ -1,11 +1,16 @@
 import React, { Component, PropTypes } from 'react';
-import './form.scss';
 import Valuation from '../Valuation';
+import ReCaptcha from '../ReCaptcha';
 import axios from 'axios';
 
-const initialState = { title: '', email: '', comment: '' };
+const initialState = { title: '', email: '', comment: '', valuation: '' };
 
-export default class Form extends React.Component {
+const verifyCallback = (response) => {
+    console.log('ok entro bien');
+    console.log(response);
+}
+
+export default class Form extends Component {
 
     constructor(props) {
         super(props);
@@ -13,6 +18,7 @@ export default class Form extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.addValuation = this.addValuation.bind(this);
     }
 
     handleChange(event) {
@@ -23,10 +29,10 @@ export default class Form extends React.Component {
     }
 
     handleSubmit(event) {
-        const { title, comment, email } = this.state;
+        const { title, comment, email, valuation } = this.state;
         const { onNewReview } = this.props;
         event.preventDefault();
-      	axios.post('/review', { title, comment, email})
+      	axios.post('/review', { title, comment, email, valuation})
             .then(response => {
                 if (typeof onNewReview === 'function') {
                     onNewReview(response.data);
@@ -35,8 +41,12 @@ export default class Form extends React.Component {
             })
     }
 
+    addValuation(valuation) {
+        this.setState({valuation: valuation});
+    }
+
     render() {
-        const { title, email, comment } = this.state;
+        const { title, email, comment, valuation } = this.state;
         return (
             <form onSubmit={ this.handleSubmit }>
               	<h1 className="slds-text-heading--large slds-m-bottom--small">POST</h1>
@@ -60,11 +70,11 @@ export default class Form extends React.Component {
                         </div>
                         <div className="slds-m-top--medium">
                             <label className="slds-form-element__label">Your Valuation</label><br/>
-                            <Valuation />
+                            <Valuation onNewValuation={ this.addValuation } />
                         </div>
-                        <div className="g-recaptcha slds-float--right" data-sitekey="6LehsxcUAAAAAFGJqyqEmbPvUBtmy755NOuXJalz"></div>
+                        <ReCaptcha sitekey="6LehsxcUAAAAAFGJqyqEmbPvUBtmy755NOuXJalz"  verifyCallback={ verifyCallback } />
                         <div className="submit-button slds-m-top--large">
-                            <button type="submit" className="slds-button slds-button--brand">Send</button>
+                            <button type="submit" id="submit-btn" className="slds-button slds-button--brand">Send</button>
                         </div>
                     </div>
                 </fieldset>
