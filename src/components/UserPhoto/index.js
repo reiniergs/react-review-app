@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './user-photo.scss';
 
 export default class UserPhoto extends Component {
 	
